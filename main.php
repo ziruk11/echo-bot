@@ -2,7 +2,8 @@
 
 define("TOKEN", "YOUR_BOT_TOKEN");
 
-function execurl($url){
+// A simple function to execute telegram api methods
+function execurl($url){ 
     $ch1 = curl_init("https://api.telegram.org/bot".TOKEN."/".$url);
     curl_setopt($ch1, CURLOPT_HTTPHEADER, array('Content-Type:text/xml'));
     curl_setopt($ch1, CURLOPT_HTTPGET, true);
