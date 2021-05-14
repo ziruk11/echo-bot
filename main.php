@@ -26,5 +26,5 @@ $text = isset($message['text']) ? $message['text'] : "";
 $text = trim($text);
 
 execurl("sendMessage?chat_id=$chatId&text=" . urlencode($text));
-
+//all text must be encoded with urlencode since you're basically creating an url to execute. It gets rid of spaces and illegal carachters for url
 ?>
