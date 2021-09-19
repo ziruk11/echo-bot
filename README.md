@@ -22,3 +22,20 @@ Be sure to change YOUR_TOKEN with your bot token and YOUR_FILE_URL with the link
 
 If you don't know where to host your php file and just want to make it work the easiest way in my opinion is to install xampp (https://www.apachefriends.org/) to have a php server with mysql and phpmyadmin and use telebit (https://telebit.cloud/) to tunnel it and have an https connection that is required by telegram
 
+## Notes
+
+keyboards or other parameters that are in the form of an array should be encoded in json 
+execurl("sendMessage", array(
+  'chat_id' => $chatId,
+  'text' => "some text",
+  'reply_markup' => json_encode(array(
+    'inline_keyboard' => array(
+     array(
+       array(
+         'text' => "some text",
+         'url' => "some url"
+        )
+      )
+    )
+  ),true)
+));
