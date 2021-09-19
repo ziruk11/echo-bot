@@ -28,7 +28,7 @@ keyboards or other parameters that are in the form of an array should be encoded
 ```
 execurl("sendMessage", array(
   'chat_id' => $chatId,
-  'text' => "some text",
+  'text' => $text,
   'reply_markup' => json_encode(array(
     'inline_keyboard' => array(
      array(
